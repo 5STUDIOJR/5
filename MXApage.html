@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <link rel="icon" type="image/png" href="IMAge/515board3.1.png">
+        <title>Maxallure</title>
+         <link rel="stylesheet" href="MXmystylesheetpro.css">
+        <meta charset="utf-8">
+</head>
+
+<body>
+    
+     <div class="box1">
+        <a href="HomeHTML.html" onclick="location.reload()"><img src="IMAge/Nametag.png" width= "700" alt="Nametag">
+       </a> 
+    </div>
+    
+  <div class="image-gallery">
+    <!-- Row 1 -->
+    <div class="grid-item top-row">
+        <img src="IMAge/MXA/MXA%20TATTOO%20MOCK.png" alt="Image 3">
+        <img src="IMAge/MXA/MXA%20tattoo%20RodriguezJ.PNG" alt="Image 3">
+        <img src="IMAge/MXA/MXA%20tattoo%20RodriguezJ2.PNG" alt="Image 3">
+        <img src="IMAge/MXA/MXAbackpic.PNG" alt="Image 3">
+        <img src="IMAge/MXA/MXASketchtat.JPG" alt="Image 3">
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid-item second-row">
+        <img src="IMAge/MXA/MXA%20serial%20letter.png" alt="Image 1">
+        <img src="IMAge/MXA/MaxallureCutoutTEMP8.75x33.png" alt="Image 3">
+        <img src="IMAge/MXA/MXAcutoutlayout.PNG" alt="Image 2">
+        <img src="IMAge/MXA/MXAcuttoutpic.PNG" alt="Image 1">
+    </div>
+
+    <!-- Row 3 -->
+    <div class="grid-item third-row">
+        <img src="IMAge/MXA/MXA%20DOUG%20TAGRE.PNG" alt="Image 2">
+        <img src="IMAge/MXA/MXADougtagpic.PNG" alt="Image 2">
+        <img src="IMAge/MXA/MXAfollowdoug.PNG" alt="Image 3">
+        <img src="IMAge/MXA/MXAtagsketch.PNG" alt="Image 1">
+        <img src="IMAge/MXA/MXASketchtag.JPG" alt="Image 1">
+    </div>
+
+    <!-- Row 4 -->
+    <div class="grid-item fourth-row">
+        <img src="IMAge/MXA/MXABURNINGFIRE.PNG" alt="Image 1">
+        <img src="IMAge/MXA/MXAFlagpic.PNG" alt="Image 2">
+    </div>
+
+    <!-- Row 5 -->
+    <div class="grid-item fifth-row">
+        <img src="IMAge/MXA/MXApad.PNG" alt="Image 2">
+        <img src="IMAge/MXA/MXAtvpick.PNG" alt="Image 2">
+    </div>
+
+
+</div>
+
+  <div class="parbox">
+    <h3>Contact</h3>
+
+    <h3 class="learn">
+        <a href="https://www.instagram.com/jonathanrodrigvez/" target="_blank">IG: @jonathanrodrigvez</a>
+    </h3>
+
+    <h3>Email: jarodriguez7210@gmail.com</h3>
+</div>
+     <div class="contact">
+         <h3>-</h3>
+         <h3>-</h3>
+        <h3>-</h3>
+        <h3>(+)</h3>
+        <h3>(+)</h3>
+        <h3>-</h3>
+         <h3>-</h3>
+         <h3>-</h3>
+    </div>
+    
+      <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Full-size image">
+        <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
+    <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>  
+</div>
+   <script>
+let images = []; // Store all images
+let currentIndex = 0;
+
+// Get all images from .first and .image-gallery
+document.querySelectorAll('.first img, .image-gallery img').forEach((img, index) => {
+    images.push(img.src); // Store image sources
+    img.addEventListener('click', function() {
+        openLightbox(index);
+    });
+});
+
+// Open Lightbox
+function openLightbox(index) {
+    currentIndex = index;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+    document.getElementById('lightbox').style.display = 'flex';
+}
+
+// Close Lightbox
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+
+// Navigate Images
+function changeImage(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1; // Go to last image if at the start
+    } else if (currentIndex >= images.length) {
+        currentIndex = 0; // Loop back to first image
+    }
+    document.getElementById('lightbox-img').src = images[currentIndex];
+}
+</script>
+</body>
+    
+
+</html>

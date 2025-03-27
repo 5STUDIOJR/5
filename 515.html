@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="IMAge/515board3.1.png">
+    <title>515</title>
+    <link rel="stylesheet" href="https://use.typekit.net/plj7bvl.css">
+    <link rel="stylesheet" href="5mystylesheetpro.css">
+    <meta charset="utf-8">
+</head>
+
+<body class="bg-gif"> <!-- Add a class to control background -->
+    
+    <div class="box1">
+        <a href="HomeHTML.html" onclick="location.reload()"><img src="IMAge/Nametag.png" width= "700" alt="Nametag">
+       </a> 
+    </div>
+
+    <div class="first">
+        <img src="IMAge/515/5forStella.PNG" alt="Image 2">
+        <img src="IMAge/515/5finshesd.PNG" alt="Image 1">
+    </div>
+
+    <div class="image-gallery">
+        <img src="IMAge/515/5on5.png" alt="Image 2">
+        <img src="IMAge/515/515DougMock.png" alt="Image 1">
+        <img src="IMAge/515/5Westernaddition5.png" alt="Image 3">
+        <img src="IMAge/515/515firstout.png" alt="Image 2">
+        <img src="IMAge/515/515firstout_R2.png" alt="Image 3">
+        <img src="IMAge/515/5firstround.png" alt="Image 2">
+        <img src="IMAge/515/5Flagship.png" alt="Image 3">
+        <img src="IMAge/515/5Plaid5.png" alt="Image 3">
+        <img src="IMAge/515/5Steella5.png" alt="Image 2">
+        <img src="IMAge/515/5Steella5_2.png" alt="Image 2">
+        <img src="IMAge/515/5world_green.png" alt="Image 3">
+        <img src="IMAge/515/5world_pink.png" alt="Image 3">
+    </div>
+    <div class="parabox">
+        <h3>Contact</h3>
+        <h3 class="learn">
+            <a href="https://www.instagram.com/jonathanrodrigvez/" target="_blank">IG: @jonathanrodrigvez</a>
+        </h3>
+        <h3>Email: jarodriguez7210@gmail.com</h3>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h3>-</h3>
+        <h3>(+)</h3>
+        <h3>(+)</h3>
+        <h3>-</h3>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Full-size image">
+        <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
+    <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>  
+</div>
+   <script>
+let images = []; // Store all images
+let currentIndex = 0;
+
+// Get all images from .first and .image-gallery
+document.querySelectorAll('.first img, .image-gallery img').forEach((img, index) => {
+    images.push(img.src); // Store image sources
+    img.addEventListener('click', function() {
+        openLightbox(index);
+    });
+});
+
+// Open Lightbox
+function openLightbox(index) {
+    currentIndex = index;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+    document.getElementById('lightbox').style.display = 'flex';
+}
+
+// Close Lightbox
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+
+// Navigate Images
+function changeImage(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1; // Go to last image if at the start
+    } else if (currentIndex >= images.length) {
+        currentIndex = 0; // Loop back to first image
+    }
+    document.getElementById('lightbox-img').src = images[currentIndex];
+}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+body {
+    background-image: url('IMAge/School/Snack.png'); 
+    background-size: contain;
+
+    background-repeat: no-repeat;
+}
+.contact {
+    background-image: url("IMAge/School/converted.gif");
+}
+/* General Text Styles */
+h2, .right, .semi, .loc {
+  font-family: "elevon", "roc-grotesk", sans-serif;
+  font-style: normal;
+  font-size: 1.8rem; /* Adjusted for responsiveness */
+  color: white;
+}
+
+h2 {
+  text-align: left;
+}
+
+.right, .loc {
+  text-align: right;
+}
+
+h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: hotpink;
+}
+
+/* Links Styling */
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: hotpink;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  text-decoration: underline;
+}
+
+/* Centering Containers */
+.container, .box1, .contact, .parbox {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Image Gallery */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Even spacing */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Uniform Image Styling */
+.image-gallery img {
+  width: auto;
+  max-height: 250px; /* Prevents excessive stretching */
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .image-gallery img {
+    max-height: 180px; /* Smaller on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-item {
+    flex-direction: column; /* Stack images vertically */
+    align-items: center;
+  }
+  .image-gallery img {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* Contact Section */
+.contact {
+  margin: 1% auto;
+}
+
+/* Paragraph Box */
+.parbox {
+  padding: 3%;
+  margin: 5% auto;
+ 
+  border-radius: 8px;
+
+}
+
+.first {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    gap: 10px; /* Adds spacing between images */
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto; /* Centers the container itself */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.first img {
+    height: 40vh; /* Keeps height responsive */
+    width: auto; /* Maintains aspect ratio */
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.first img:hover {
+    transform: scale(1.05); /* Same hover effect as image-gallery */
+}
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Full-size image inside the lightbox */
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Close button */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+.lightbox-prev, .lightbox-next {
+    position: absolute;
+    top: 50%;
+    font-size: 80px; /* Increased from 40px to 80px */
+    color: white;
+    cursor: pointer;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px; /* Increased padding */
+    border-radius: 8px; /* Optional rounded corners */
+    user-select: none;
+}
+
+/* Adjust arrow positions */
+.lightbox-prev { left: 30px; } /* Move further from edge */
+.lightbox-next { right: 30px; }
+
+.lightbox-prev:hover, .lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
